@@ -5,18 +5,11 @@ function Movie() {
     const [movieList, setMovieList] = useState([]);
 
     const fetchMovies = async () => {
-        try {
-            const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
+        const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
             const json = await res.json();
-
-            if (!res.ok) {
-                throw new Error('Failed to fetch movie data');
-            }
-
+            console.log(json.results);
             setMovieList(json.results);
-        } catch (error) {
-            console.error('Error fetching movie data:', error);
-        }
+        
     };
 
     useEffect(() => {
@@ -31,15 +24,17 @@ function Movie() {
                     movieList.map(movie => (
                         <div key={movie.id} className="movie-card">
                             <h2>{movie.title}</h2>
+                            <p>Yayınlanma Tarihi:{movie.release_date}</p>
                             {movie.poster_path ? (
-                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                                <img style={{height:"350px",width:"350px"}} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+
                             ) : (
-                                <p>No poster available</p>
+                                <p>Fotoğtafi yoktur.</p>
                             )}
                         </div>
                     ))
                 ) : (
-                    <p>Loading...</p>
+                    <p>Yükleniyor</p>
                 )}
             </div>
         </div>
