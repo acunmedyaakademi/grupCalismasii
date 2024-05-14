@@ -1,0 +1,38 @@
+.movie-container {
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.movie-card {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.movie-card h2 {
+    margin-top: 0;
+}
+
+.poster {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.no-poster {
+    font-style: italic;
+}
+
+.loading {
+    text-align: center;
+}
