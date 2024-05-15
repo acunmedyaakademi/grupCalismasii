@@ -35,7 +35,7 @@ function Movie() {
                     movieList.map(movie => (
                         <div key={movie.id}>
                             <div className="movie-card">
-                                <a href="#" onClick={() => showAlert(movie)} ><img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} /></a>
+                                <a href="#" onClick={() => showAlert(movie)} ><img style={{ height: "400px", width: "300px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} /></a>
                                 <div className="card-text">
                                     <div className='hidden'>
                                         <span>Detaylar</span> <span>İzle</span>
