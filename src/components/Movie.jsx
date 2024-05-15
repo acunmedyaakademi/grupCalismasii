@@ -41,7 +41,8 @@ function Movie() {
                                     </div>
                                     <h2>{movie.title}</h2>
                                     <div className="movie-details">
-                                        <span className="detail">IMDB: {movie.vote_average}</span>
+                                        <p className="detail">IMDB: {movie.vote_average}</p>
+                                        <a className='trailer'>Trailer</a>
                                     </div>
                                 </div>
                             </div>
