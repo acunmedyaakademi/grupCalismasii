@@ -9,6 +9,10 @@ function Navbar() {
                 <div className='logo'>
                     <img src={moviesLogo} alt="" />
                 </div>
+                <form className='form'>
+                    <input className='input' type="text" placeholder='Ne aramak istemiştiniz?'/>
+                    <button className='search trailer'>Ara</button>
+                </form>
                 <div>
                     <ul className='navbar'>
                         <li> <a href="#">Anasayfa</a> </li>
