@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     /* justify-content: center; */
-    background-color: #5e5d5d;
+    background-color: #5e5e5d;
     padding: 16px;
     justify-content: space-between;
     padding-inline: 50px;
@@ -26,6 +26,7 @@
             color: #fff;
             font-weight: 900;
             font-size: 20px;
+            text-decoration: none;
         }
 
         a:hover {
@@ -40,7 +41,7 @@
     color: #242424;
     width: 700px;
     text-align: center;
-    height: 50px;
+    height: 40px;
     min-height: 40px;
     border-radius: 4px;
     outline: none;
@@ -58,7 +59,7 @@
 }
 
 .search{
-    height: 50px;
+    height: 40px;
     margin-left: 15px;
     width: 70px;
 }

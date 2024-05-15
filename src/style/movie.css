@@ -1,7 +1,6 @@
 .movie-container {
     padding: 20px;
 }
-
 body {
     background-color: #494949;
     color: #FFFFFF;
@@ -69,4 +68,9 @@ body {
 .trailer:hover {
     background-color: #cc0000;
     /* Koyu kırmızı hover rengi */
+}
+.containerForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

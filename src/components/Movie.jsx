@@ -13,6 +13,7 @@ function Movie() {
             imageAlt: movie.title,
         });
     };
+}
 
     const [movieList, setMovieList] = useState([]);
 
@@ -29,7 +30,13 @@ function Movie() {
 
     return (
         <div>
+            <div className="containerForm">
             <h1 className='baslik'>Movie Lists...</h1>
+            <form className='form'>
+                    <input className='input' type="text" value={inputValue} onChange={handleInputChange}  placeholder='Ne aramak istemiştiniz?'/>{inputValue}
+                    <button className='search trailer'>Ara</button>
+                </form>
+            </div>
             <div className="cards">
                 {movieList.length > 0 ? (
                     movieList.map(movie => (
@@ -57,6 +64,6 @@ function Movie() {
 
         </div>
     );
-}
+
 
 export default Movie;
