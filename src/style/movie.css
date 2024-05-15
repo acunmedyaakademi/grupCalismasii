@@ -71,18 +71,22 @@ body {
 }
 
 
-.trailer{
+.trailer {
     display: inline-block;
     padding: 10px;
-    background-color: #ff0000; /* Kırmızı */
-    color: #ffffff; /* Beyaz metin */
+    background-color: #ff0000;
+    /* Kırmızı */
+    color: #ffffff;
+    /* Beyaz metin */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
-    transition: background-color 0.3s ease; /* Hover efekti için geçiş tanımı */
+    transition: background-color 0.3s ease;
+    /* Hover efekti için geçiş tanımı */
 }
 
 .trailer:hover {
-    background-color: #cc0000; /* Koyu kırmızı hover rengi */
+    background-color: #cc0000;
+    /* Koyu kırmızı hover rengi */
 }
