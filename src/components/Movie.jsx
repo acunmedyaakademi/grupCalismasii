@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../style/movie.css';
 import Alert from 'sweetalert2';
 
+
+
 function Movie() {
     const showAlert = (movie) => {
         Alert.fire({
@@ -19,7 +21,6 @@ function Movie() {
     const fetchMovies = async () => {
         const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
         const json = await res.json();
-        console.log(json);
         setMovieList(json.results);
     };
 
@@ -29,7 +30,7 @@ function Movie() {
 
     return (
         <div>
-            <h1 className='baslik'>Movie Lists...</h1>
+            <h1 className='baslik'>Movie Lists</h1>
             <div className="cards">
                 {movieList.length > 0 ? (
                     movieList.map(movie => (
@@ -53,8 +54,6 @@ function Movie() {
                     <p>Loading...</p>
                 )}
             </div>
-
-
         </div>
     );
 }

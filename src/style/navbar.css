@@ -8,6 +8,9 @@
     padding-inline: 50px;
 }
 
+a{
+    text-decoration: none;
+}
 .logo {
     img {
         width: 120px;
