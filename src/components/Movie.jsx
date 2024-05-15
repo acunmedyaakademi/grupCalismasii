@@ -29,13 +29,13 @@ function Movie() {
 
     return (
         <div>
-            <h1 className='baslik'>Movie List</h1>
+            <h1 className='baslik'>Movie Lists...</h1>
             <div className="cards">
                 {movieList.length > 0 ? (
                     movieList.map(movie => (
-                        <a onClick={() => showAlert(movie)} key={movie.id}>
+                        <div key={movie.id}>
                             <div className="movie-card">
-                                <img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                                <a href="#" onClick={() => showAlert(movie)} ><img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} /></a>
                                 <div className="card-text">
                                     <div className='hidden'>
                                         <span>Detaylar</span> <span>İzle</span>
@@ -47,7 +47,7 @@ function Movie() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     ))
                 ) : (
                     <p>Loading...</p>
