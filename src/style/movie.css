@@ -1,10 +1,9 @@
-
-
 .movie-container {
     padding: 20px;
 }
+
 body {
-    background-color: #2b2929;
+    background-color: #494949;
     color: #FFFFFF;
     font-family: 'Netflix Sans', Arial, sans-serif;
 }
@@ -15,7 +14,7 @@ body {
     margin-bottom: 20px;
 }
 
-.hidden{
+.hidden {
     /* padding: 100px; */
     display: none;
     position: absolute;
@@ -30,18 +29,20 @@ body {
 
 
 
-.baslik{
-text-align: center;
-padding: 50px;
+.baslik {
+    text-align: center;
+    padding: 50px;
 }
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 
-    
+
 }
-.movie-card img:hover{
+
+.movie-card img:hover {
     opacity: 0.3;
 }
 
@@ -49,7 +50,6 @@ padding: 50px;
     position: relative;
     padding: 10px;
     border-radius: 5px;
-    background-color: #2b2929;
     text-align: center;
 }
 
@@ -69,8 +69,3 @@ padding: 50px;
 .loading {
     text-align: center;
 }
-
-
-
-
-  

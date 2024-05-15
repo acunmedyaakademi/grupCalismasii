@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    background-color: #5e5d5d;
     padding: 16px;
     gap: 1000px;
 }
@@ -22,7 +22,7 @@
         list-style: none;
 
         a {
-            color: #383b3b;
+            color: #fff;
             font-weight: 900;
             font-size: 20px;
         }
