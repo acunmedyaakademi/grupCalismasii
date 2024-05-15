@@ -2,22 +2,55 @@
     padding: 20px;
 }
 
+body {
+    background-color: #494949;
+    color: #FFFFFF;
+    font-family: 'Netflix Sans', Arial, sans-serif;
+}
+
+
 .title {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.movie-grid {
+.hidden {
+    /* padding: 100px; */
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+}
+
+
+
+
+
+.baslik {
+    text-align: center;
+    padding: 50px;
+}
+
+.cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+
+
+}
+
+.movie-card img:hover {
+    opacity: 0.3;
 }
 
 .movie-card {
+    position: relative;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    text-align: center;
 }
 
 .movie-card h2 {
