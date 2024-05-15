@@ -30,27 +30,24 @@ function Movie() {
         <div>
             <h1 className='baslik'>Movie List</h1>
             <div className="cards">
-                {movieList.length > 0 ? (
-                    movieList.map(movie => (
-                        <a onClick={() => showAlert(movie)} key={movie.id}>
-                            <div className="movie-card">
-                                <img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                                <div className="card-text">
-                                    <div className='hidden'>
-                                        <span>Detaylar</span> <span>İzle</span>
-                                    </div>
-                                    <h2>{movie.title}</h2>
-                                    <div className="movie-details">
-                                        <span className="detail">IMDB: {movie.vote_average}</span>
-                                    </div>
+                {movieList.length > 0 && movieList.map(movie => (
+                    <a onClick={() => showAlert(movie)} key={movie.id}>
+                        <div className="movie-card">
+                            <img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                            <div className="card-text">
+                                <div className='hidden'>
+                                    <span>Detaylar</span> <span>İzle</span>
+                                </div>
+                                <h2>{movie.title}</h2>
+                                <div className="movie-details">
+                                    <span className="detail">IMDB: {movie.vote_average}</span>
                                 </div>
                             </div>
-                        </a>
-                    ))
-                ) : (
-                    <p>Loading...</p>
-                )}
+                        </div>
+                    </a>
+                ))}
             </div>
+
 
         </div>
     );
