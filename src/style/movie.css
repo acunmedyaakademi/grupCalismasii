@@ -1,0 +1,88 @@
+.movie-container {
+    padding: 20px;
+}
+
+body {
+    background-color: #494949;
+    color: #FFFFFF;
+    font-family: 'Netflix Sans', Arial, sans-serif;
+}
+
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    /* padding: 100px; */
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+}
+
+
+
+
+
+.baslik {
+    text-align: center;
+    padding: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+
+}
+
+.movie-card img:hover {
+    opacity: 0.3;
+}
+
+.movie-card {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.movie-card h2 {
+    margin-top: 0;
+}
+
+.poster {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.no-poster {
+    font-style: italic;
+}
+
+.loading {
+    text-align: center;
+}
+
+
+.trailer{
+    display: inline-block;
+    padding: 10px;
+    background-color: #ff0000; /* Kırmızı */
+    color: #ffffff; /* Beyaz metin */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease; /* Hover efekti için geçiş tanımı */
+}
+
+.trailer:hover {
+    background-color: #cc0000; /* Koyu kırmızı hover rengi */
+}
