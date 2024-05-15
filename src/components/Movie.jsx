@@ -19,6 +19,7 @@ function Movie() {
     const fetchMovies = async () => {
         const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
         const json = await res.json();
+        console.log(json);
         setMovieList(json.results);
     };
 
@@ -32,9 +33,9 @@ function Movie() {
             <div className="cards">
                 {movieList.length > 0 ? (
                     movieList.map(movie => (
-                        <a onClick={() => showAlert(movie)} key={movie.id}>
+                        <div key={movie.id}>
                             <div className="movie-card">
-                                <img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                               <a  onClick={() => showAlert(movie)} href="#"><img style={{ height: "500px", width: "400px" }} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} /></a>   
                                 <div className="card-text">
                                     <div className='hidden'>
                                         <span>Detaylar</span> <span>İzle</span>
@@ -46,7 +47,7 @@ function Movie() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     ))
                 ) : (
                     <p>Loading...</p>
