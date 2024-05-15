@@ -29,7 +29,7 @@ function Movie() {
 
     return (
         <div>
-            <h1 className='baslik'>Movie List</h1>
+            <h1 className='baslik'>Movie Lists</h1>
             <div className="cards">
                 {movieList.length > 0 ? (
                     movieList.map(movie => (
