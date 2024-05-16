@@ -9,7 +9,7 @@ function Navbar() {
                 <div className='logo'>
                     <img src={moviesLogo} alt="" />
                 </div>
-                
+    
                 <div>
                     <ul className='navbar'>
                         <li> <a href="#">Anasayfa</a> </li>
@@ -17,7 +17,7 @@ function Navbar() {
                         <li> <a href="#">Diziler</a> </li>
                     </ul>
                 </div>
-
+                
             </div>
 
 

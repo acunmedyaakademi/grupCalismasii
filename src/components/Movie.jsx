@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import '../style/movie.css';
 import Alert from 'sweetalert2';
 
-
-
 function Movie() {
     const [movieList, setMovieList] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
+    // SweetAlert ile alert daha güzel bir şekilde yapıldı.
     const showAlert = (movie) => {
         Alert.fire({
             title: movie.title,
@@ -19,31 +18,47 @@ function Movie() {
         });
     };
 
-    const [movieList, setMovieList] = useState([]);
-
-    const fetchMovies = async () => {
-        const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
+    // API'den filmlerin getirilmesi ve key'e göre arama yapılıyor.
+    const fetchMovies = async (key = '') => {
+        const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=4809c298151f2a5613663465a0b0fa88&query=${key}`);
         const json = await res.json();
-        console.log(json);
         setMovieList(json.results);
     };
 
+    // Sayfa yüklendiğinde boşken filmleri getirmesi için.
     useEffect(() => {
-        fetchMovies(); // Fetch all movies when the component mounts
+        const fetchStartMovies = async () => {
+            const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4809c298151f2a5613663465a0b0fa88');
+            const json = await res.json();
+            setMovieList(json.results);
+        };
+        fetchStartMovies();
     }, []);
 
+    // Inputa girilen değeri alıp fetchMovies fonksiyonuna parametre olarak atayarak arama yapılan filmleri getirir.
     const handleInputChange = (e) => {
-        const query = e.target.value;
-        setInputValue(query);
-        console.log('Input value changed:', query);
-        fetchMovies(query); // Fetch movies based on user input
+        const searchValue = e.target.value;
+        setInputValue(searchValue);
+        fetchMovies(searchValue);
     };
 
     return (
         <div>
-            <h1 className='baslik'>Movie Lists...</h1>
+            <div className="containerForm">
+                <h1 className='baslik'>Movie Lists</h1>
+                <form className='form'>
+                    <input
+                        className='input'
+                        type="text"
+                        value={inputValue}
+                        onChange={handleInputChange}
+                        placeholder='Ne aramak istemiştiniz?'
+                    />
+                    <button className='searchTrailer' type="button">Ara</button>
+                </form>
+            </div>
             <div className="cards">
-                {movieList && movieList.length > 0 ? (
+                {movieList.length > 0 && (
                     movieList.map(movie => (
                         <div key={movie.id}>
                             <div className="movie-card">
@@ -67,10 +82,6 @@ function Movie() {
                             </div>
                         </div>
                     ))
-                ) : inputValue ? (
-                    <p>No results found for "{inputValue}"</p>
-                ) : (
-                    null
                 )}
             </div>
         </div>
